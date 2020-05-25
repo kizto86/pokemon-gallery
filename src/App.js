@@ -99,11 +99,11 @@ class App extends Component {
         <Header />
 
         <Multiselect
-          options={this.state.pokemonType} // Options to display in the dropdown
-          selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-          onSelect={this.onSelect} // Function will trigger on select event
-          onRemove={this.onRemove} // Function will trigger on remove event
-          displayValue="name" // Property name to display in the dropdown options
+          options={this.state.pokemonType}
+          selectedValues={this.state.selectedValue}
+          onSelect={this.onSelect}
+          onRemove={this.onRemove}
+          displayValue="name"
         />
         <br />
 
