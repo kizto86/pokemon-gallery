@@ -9,6 +9,14 @@ const Pokemon = (props) => (
       <h6 className="card-subtitle mb-2 text-muted">
         Number: {props.pokemon.id}
       </h6>
+
+      <h6 className="card-subtitle mb-2 text-muted">
+        Type:
+        {props.pokemon.types.map((value, index) => {
+          return value.type.name + ",";
+        })}
+      </h6>
+
       <img src={props.pokemon.sprites["front_default"]} alt="" />
     </div>
   </div>
