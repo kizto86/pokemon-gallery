@@ -1,6 +1,8 @@
 import React from "react";
 import Pokemon from "./Pokemon";
 
+//RENDER THE POKEMONS RETURNED FROM THE POKEMON API
+
 const PokemonList = (props) => {
   const results = props.data;
   let pokemon = results.map((pokemon) => (

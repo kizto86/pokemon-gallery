@@ -62,18 +62,23 @@ class App extends Component {
         console.log("Error fetching and parsing data", error);
       });
   }
+  //HANDLES THE OnRemove EVENT
 
-  onSelect = (selectedList, selectedItem) => {
+  onSelect = (selectedList) => {
     this._filterFunction(selectedList);
   };
 
-  onRemove = (selectedList, removedItem) => {
+  //HANDLES THE onRemove EVENT
+
+  onRemove = (selectedList) => {
     if (selectedList.length > 0) {
       this._filterFunction(selectedList);
     } else {
       this.setState({ displayList: this.pokemonDetails });
     }
   };
+
+  //THIS FUNCTION  HANDLES THE FILTERING LOGIC
 
   _filterFunction = (selectedList) => {
     let filteredList = [];

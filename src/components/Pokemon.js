@@ -1,5 +1,7 @@
 import React from "react";
 
+//RENDER EACH OF THE POKEMON DETAILS
+
 const Pokemon = (props) => (
   <div className="card text-center mx-auto" style={{ maxWidth: "18rem" }}>
     <div className="card-header">
