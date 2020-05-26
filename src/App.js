@@ -40,7 +40,7 @@ class App extends Component {
 
   getPokemon() {
     axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=150")
+      .get("https://pokeapi.co/api/v2/pokemon?limit=20")
       .then((response) => {
         this.setState({ pokemons: response.data.results });
 
@@ -51,7 +51,11 @@ class App extends Component {
             .then((response) => {
               var temp = this.pokemonDetails;
               temp.push(response.data);
-              this.setState({ displayList: temp });
+              let result = temp.slice(0);
+              result.sort((a, b) => {
+                return a.id - b.id;
+              });
+              this.setState({ displayList: result });
             })
             .catch((error) => {
               console.log("Error fetching and parsing data", error);
@@ -62,6 +66,7 @@ class App extends Component {
         console.log("Error fetching and parsing data", error);
       });
   }
+
   //HANDLES THE OnRemove EVENT
 
   onSelect = (selectedList) => {
