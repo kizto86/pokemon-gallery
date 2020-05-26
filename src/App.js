@@ -40,7 +40,7 @@ class App extends Component {
 
   getPokemon() {
     axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=20")
+      .get("https://pokeapi.co/api/v2/pokemon?limit=150")
       .then((response) => {
         this.setState({ pokemons: response.data.results });
 

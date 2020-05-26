@@ -11,7 +11,8 @@ const Pokemon = (props) => (
       <h6 className="card-subtitle mb-2 text-muted">
         Number: {props.pokemon.id}
       </h6>
-
+    </div>
+    <div>
       <h6 className="card-subtitle mb-2 text-muted">
         Type:
         {props.pokemon.types.map((value, index) => {
