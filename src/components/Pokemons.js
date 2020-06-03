@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-//import "./App.css";
-
-//import Header from "../components/Header";
 import axios from "axios";
 import { Multiselect } from "multiselect-react-dropdown";
-import PokemanList from "../components/PokemonList";
+import PokemanList from "./PokemonList";
 
 class Pokemons extends Component {
   pokemonDetails = [];
@@ -15,6 +12,7 @@ class Pokemons extends Component {
       pokemons: [],
       pokemonType: [],
       displayList: [],
+      loading: true,
     };
   }
   //SETTING ALL DATA FETCHING INSIDE REACT ComponentDidMount LIFECYCLE
@@ -51,12 +49,13 @@ class Pokemons extends Component {
             .get(pokemon.url)
             .then((response) => {
               var temp = this.pokemonDetails;
+              //console.log(temp);
               temp.push(response.data);
               let result = temp.slice(0);
               result.sort((a, b) => {
                 return a.id - b.id;
               });
-              this.setState({ displayList: result });
+              this.setState({ displayList: result, loading: false });
             })
             .catch((error) => {
               console.log("Error fetching and parsing data", error);
@@ -68,7 +67,7 @@ class Pokemons extends Component {
       });
   }
 
-  //HANDLES THE OnRemove EVENT
+  //HANDLES THE OnSelect EVENT
 
   onSelect = (selectedList) => {
     this._filterFunction(selectedList);
@@ -100,10 +99,9 @@ class Pokemons extends Component {
   };
 
   render() {
+    const { loading, displayList } = this.state;
     return (
       <div className="container">
-        {/*<Header />*/}
-
         <Multiselect
           options={this.state.pokemonType}
           selectedValues={this.state.selectedValue}
@@ -112,8 +110,13 @@ class Pokemons extends Component {
           displayValue="name"
         />
         <br />
-
-        <PokemanList data={this.state.displayList} />
+        <div>
+          {loading ? (
+            <p>Fetching pokemons.....</p>
+          ) : (
+            <PokemanList data={displayList} />
+          )}
+        </div>
       </div>
     );
   }

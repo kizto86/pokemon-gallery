@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="Title">
       <center>
-        <h2>A Pokemon React APP</h2>
+        <h2>Poke Gallery</h2>
       </center>
     </div>
   );
