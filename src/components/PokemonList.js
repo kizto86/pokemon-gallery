@@ -1,17 +1,26 @@
 import React from "react";
 import Pokemon from "./Pokemon";
 
-//RENDER THE POKEMONS RETURNED FROM THE POKEMON API
+//render the pokemons returned from the pokemon API
 
 const PokemonList = (props) => {
   const results = props.data;
-  let pokemon = results.map((pokemon) => (
+
+  let pokemonList = results.map((pokemon) => (
     <Pokemon pokemon={pokemon} key={pokemon.id} />
   ));
 
   return (
     <div className="container">
-      <div className="card-columns">{pokemon}</div>
+      <div className="row">
+        {pokemonList.map((value, index) => {
+          return (
+            <div className="col-sm-12 col-md-4 mb-5" key={index}>
+              {value}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

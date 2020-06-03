@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-//RENDER EACH OF THE POKEMON DETAILS
+/*renders each of the pokemon details and also create 
+a link on the image tag that navigate to the pokemon detail pages when clicked*/
 
 const Pokemon = (props) => (
   <div className="card text-center mx-auto" style={{ maxWidth: "18rem" }}>

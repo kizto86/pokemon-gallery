@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+//Creating a detail pages for each pokemon
 class PokemonDetails extends Component {
   constructor() {
     super();
@@ -13,6 +14,7 @@ class PokemonDetails extends Component {
     this.fetchPoketype();
   }
 
+  //fetches a particular  pokemon details based on the id passed as  params
   fetchPoketype() {
     const {
       match: { params },
@@ -21,8 +23,6 @@ class PokemonDetails extends Component {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
       .then((response) => {
-        //console.log(response);
-
         this.setState({ poke: response.data });
       })
       .catch((error) => {

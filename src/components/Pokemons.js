@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Multiselect } from "multiselect-react-dropdown";
-import PokemanList from "./PokemonList";
+import PokemonList from "./PokemonList";
 
 class Pokemons extends Component {
   pokemonDetails = [];
@@ -15,14 +15,15 @@ class Pokemons extends Component {
       loading: true,
     };
   }
-  //SETTING ALL DATA FETCHING INSIDE REACT ComponentDidMount LIFECYCLE
+
+  //setting all data fetching inside react componentDidMount lifecycle
 
   componentDidMount() {
     this.getPokemon();
     this.getPoketype();
   }
 
-  //FETCHES THE DIFFERENT TYPES OF POKEMON
+  //fetches the different types of pokemon
 
   getPoketype() {
     axios
@@ -35,45 +36,41 @@ class Pokemons extends Component {
       });
   }
 
-  //FETCHES THE FIRST 150 POKEMON
+  //fetches the first 150 pokemons
 
-  getPokemon() {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=150")
-      .then((response) => {
-        this.setState({ pokemons: response.data.results });
+  getPokemon = async () => {
+    let response = await axios.get(
+      "https://pokeapi.co/api/v2/pokemon?limit=150"
+    );
 
-        // eslint-disable-next-line array-callback-return
-        this.state.pokemons.map((pokemon) => {
-          axios
-            .get(pokemon.url)
-            .then((response) => {
-              var temp = this.pokemonDetails;
-              //console.log(temp);
-              temp.push(response.data);
-              let result = temp.slice(0);
-              result.sort((a, b) => {
-                return a.id - b.id;
-              });
-              this.setState({ displayList: result, loading: false });
-            })
-            .catch((error) => {
-              console.log("Error fetching and parsing data", error);
-            });
-        });
-      })
-      .catch((error) => {
-        console.log("Error fetching and parsing data", error);
-      });
-  }
+    let pokemons = response.data.results;
+    let pkmList = [];
+    await this._asyncForEach(pokemons, async (pokemon) => {
+      let result = await axios.get(pokemon.url);
+      pkmList.push(result.data);
+    });
 
-  //HANDLES THE OnSelect EVENT
+    pkmList.sort((a, b) => {
+      return a.id - b.id;
+    });
+
+    this.pokemonDetails = pkmList;
+    this.setState({ displayList: pkmList, loading: false });
+  };
+
+  _asyncForEach = async (array, callback) => {
+    for (let index = 0; index < array.length; index++) {
+      await callback(array[index], index, array);
+    }
+  };
+
+  //handles the  OnSelect event
 
   onSelect = (selectedList) => {
     this._filterFunction(selectedList);
   };
 
-  //HANDLES THE onRemove EVENT
+  //handles the OnRemove event
 
   onRemove = (selectedList) => {
     if (selectedList.length > 0) {
@@ -83,7 +80,7 @@ class Pokemons extends Component {
     }
   };
 
-  //THIS FUNCTION  HANDLES THE FILTERING LOGIC
+  //handles the filtering logic
 
   _filterFunction = (selectedList) => {
     let filteredList = [];
@@ -114,7 +111,7 @@ class Pokemons extends Component {
           {loading ? (
             <p>Fetching pokemons.....</p>
           ) : (
-            <PokemanList data={displayList} />
+            <PokemonList data={displayList} />
           )}
         </div>
       </div>

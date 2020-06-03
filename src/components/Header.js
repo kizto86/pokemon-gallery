@@ -1,6 +1,6 @@
 import React from "react";
 
-//RENDERS A TITLE FOR THE PAGE
+//renders a title for the page
 const Header = () => {
   return (
     <div className="Title">

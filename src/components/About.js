@@ -1,5 +1,5 @@
 import React from "react";
-
+// renders the about page
 const About = () => {
   return (
     <div className="card text-center">
