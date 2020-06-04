@@ -1,7 +1,7 @@
 # POKEMON REACT APP
 
 This app fetches pokemon data from https://pokeapi.co/ and renders the first 150 Pokemons
-It includes name, number, type and picture. It also filters the displayed pokemon based on the type.
+It includes name, number, type and picture. It also filters the displayed pokemon base on the type.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 and https://getbootstrap.com/ for the front end.
