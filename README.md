@@ -6,7 +6,7 @@ It includes name, number, type and picture. It also filters the displayed pokemo
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 and https://getbootstrap.com/ for the front end.
 
-You can visit the app at https://kizto86.github.io/React_Pokemon/
+You can visit the app at https://kizto86.github.io/pokemon_gallery/
 
 ## Get Started
 
