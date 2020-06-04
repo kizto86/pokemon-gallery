@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/React_Pokemon/static/css/main.adaacf16.chunk.css",
-    "main.js": "/React_Pokemon/static/js/main.712c0d79.chunk.js",
-    "main.js.map": "/React_Pokemon/static/js/main.712c0d79.chunk.js.map",
-    "runtime-main.js": "/React_Pokemon/static/js/runtime-main.3514c663.js",
-    "runtime-main.js.map": "/React_Pokemon/static/js/runtime-main.3514c663.js.map",
-    "static/js/2.6fc51ac0.chunk.js": "/React_Pokemon/static/js/2.6fc51ac0.chunk.js",
-    "static/js/2.6fc51ac0.chunk.js.map": "/React_Pokemon/static/js/2.6fc51ac0.chunk.js.map",
-    "index.html": "/React_Pokemon/index.html",
-    "precache-manifest.9cb79fc492ab48b5bff99dffc494ccf3.js": "/React_Pokemon/precache-manifest.9cb79fc492ab48b5bff99dffc494ccf3.js",
-    "service-worker.js": "/React_Pokemon/service-worker.js",
-    "static/css/main.adaacf16.chunk.css.map": "/React_Pokemon/static/css/main.adaacf16.chunk.css.map",
-    "static/js/2.6fc51ac0.chunk.js.LICENSE.txt": "/React_Pokemon/static/js/2.6fc51ac0.chunk.js.LICENSE.txt"
+    "main.css": "/pokemon_gallery/static/css/main.adaacf16.chunk.css",
+    "main.js": "/pokemon_gallery/static/js/main.712c0d79.chunk.js",
+    "main.js.map": "/pokemon_gallery/static/js/main.712c0d79.chunk.js.map",
+    "runtime-main.js": "/pokemon_gallery/static/js/runtime-main.887f36d6.js",
+    "runtime-main.js.map": "/pokemon_gallery/static/js/runtime-main.887f36d6.js.map",
+    "static/js/2.6fc51ac0.chunk.js": "/pokemon_gallery/static/js/2.6fc51ac0.chunk.js",
+    "static/js/2.6fc51ac0.chunk.js.map": "/pokemon_gallery/static/js/2.6fc51ac0.chunk.js.map",
+    "index.html": "/pokemon_gallery/index.html",
+    "precache-manifest.6269ec9664699935a943e80547116be9.js": "/pokemon_gallery/precache-manifest.6269ec9664699935a943e80547116be9.js",
+    "service-worker.js": "/pokemon_gallery/service-worker.js",
+    "static/css/main.adaacf16.chunk.css.map": "/pokemon_gallery/static/css/main.adaacf16.chunk.css.map",
+    "static/js/2.6fc51ac0.chunk.js.LICENSE.txt": "/pokemon_gallery/static/js/2.6fc51ac0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3514c663.js",
+    "static/js/runtime-main.887f36d6.js",
     "static/js/2.6fc51ac0.chunk.js",
     "static/css/main.adaacf16.chunk.css",
     "static/js/main.712c0d79.chunk.js"
