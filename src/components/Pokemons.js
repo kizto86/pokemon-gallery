@@ -52,7 +52,7 @@ class Pokemons extends Component {
 
   getPokemon = async () => {
     let response = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon?limit=20"
+      "https://pokeapi.co/api/v2/pokemon?limit=10"
     );
 
     let pokemons = response.data.results;
