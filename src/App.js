@@ -4,7 +4,7 @@ import "./App.css";
 import About from "./components/About";
 import pokemonDetails from "./components/PokemonDetails";
 import Nav from "./components/Nav";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 //defining  routes and component to render on the routes
 const App = () => {

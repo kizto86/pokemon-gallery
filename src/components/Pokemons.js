@@ -23,27 +23,40 @@ class Pokemons extends Component {
     this.getPoketype();
   }
 
+  getPoketype = async () => {
+    try {
+      const pokeType = await fetch("https://pokeapi.co/api/v2/type");
+      const response = await pokeType.json();
+
+      this.setState({ pokemonType: response.results });
+    } catch (error) {
+      console.log("Error while fetching poke type", error);
+    }
+  };
+
   //fetches the different types of pokemon
 
-  getPoketype() {
+  /*getPoketype() {
     axios
       .get("https://pokeapi.co/api/v2/type")
       .then((response) => {
+        console.log(response);
         this.setState({ pokemonType: response.data.results });
       })
       .catch((error) => {
         console.log("Error fetching and parsing data", error);
       });
-  }
+  }*/
 
   //fetches the first 150 pokemons
 
   getPokemon = async () => {
     let response = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon?limit=150"
+      "https://pokeapi.co/api/v2/pokemon?limit=20"
     );
 
     let pokemons = response.data.results;
+    //console.log(pokemons);
     let pkmList = [];
     await this._asyncForEach(pokemons, async (pokemon) => {
       let result = await axios.get(pokemon.url);

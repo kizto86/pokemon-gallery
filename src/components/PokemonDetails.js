@@ -1,48 +1,38 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-//Creating a detail pages for each pokemon
-class PokemonDetails extends Component {
-  constructor() {
-    super();
-    this.state = {
-      poke: {},
-    };
-  }
+//This component renders the pokemon detail page
+const PokemonDetails = ({ match }) => {
+  useEffect(() => {
+    fetchPoketype();
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  componentDidMount() {
-    this.fetchPoketype();
-  }
+  const [poke, setPoke] = useState({});
 
-  //fetches a particular  pokemon details based on the id passed as  params
-  fetchPoketype() {
-    const {
-      match: { params },
-    } = this.props;
-
+  //fetches a single pokemon using it id
+  const fetchPoketype = () => {
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
+      .get(`https://pokeapi.co/api/v2/pokemon/${match.params.id}`)
       .then((response) => {
-        this.setState({ poke: response.data });
+        const result = response.data;
+        setPoke(result);
       })
       .catch((error) => {
         console.log("Error fetching and parsing data", error);
       });
-  }
+  };
 
-  render() {
-    const { poke } = this.state;
-    return (
-      <div className="card text-center">
-        <div className="card-body">
-          <h1>Name : {poke.name}</h1>
-          <h1>ID : {poke.id}</h1>
-          <h1>Height : {poke.height}</h1>
-          <h1>Weight : {poke.weight}</h1>
-        </div>
+  return (
+    <div className="card text-center">
+      <div className="card-body">
+        <h1>Name : {poke.name}</h1>
+        <h1>ID : {poke.id}</h1>
+        <h1>Height : {poke.height}</h1>
+        <h1>Weight : {poke.weight}</h1>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default PokemonDetails;
