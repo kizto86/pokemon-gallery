@@ -10,8 +10,6 @@ You can visit the app at https://kizto86.github.io/pokemon_gallery/
 
 ## Get Started
 
-To install the project dependencies from your terminal you can run:
-
 ### `npm install`
 
 To start the project in the browser, from the project directory, you can run:
