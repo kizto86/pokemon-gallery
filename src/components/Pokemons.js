@@ -48,11 +48,11 @@ class Pokemons extends Component {
       });
   }*/
 
-  //fetches the first 150 pokemons
+  //fetches the  pokemons
 
   getPokemon = async () => {
     let response = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon?limit=150"
+      "https://pokeapi.co/api/v2/pokemon?limit=30"
     );
 
     let pokemons = response.data.results;
@@ -111,7 +111,7 @@ class Pokemons extends Component {
   render() {
     const { loading, displayList } = this.state;
     return (
-      <div className="container">
+      <div className="container" id="space">
         <Multiselect
           options={this.state.pokemonType}
           selectedValues={this.state.selectedValue}

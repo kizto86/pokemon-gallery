@@ -2,6 +2,13 @@ body {
   margin: 0;
 }
 
+h2 {
+  font-size: bold;
+  font-style: italic;
+}
+#space {
+  padding-top: 20px;
+}
 nav {
   display: flex;
   justify-content: space-around;

@@ -8,10 +8,11 @@ const About = () => {
           Poke gallery is a react application that fetches Pokemon from the poke
           API
         </p>
-        <p>It renders the first 150 Pokemon and displays their details</p>
+        <p>It renders the Pokemons and displays their details</p>
         <p>The Pokemons can be filter by multiple types</p>
         <p>
-          To view more information about each Pokemon click on the Pokemon Image
+          To view more information about each Pokemon click on the Pokemon's
+          Image
         </p>
       </div>
     </div>
