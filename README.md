@@ -10,8 +10,8 @@ You can visit the app at https://kizto86.github.io/pokemon_gallery/
 
 ## Technologies used
 
-React
-JavaScript
+React,
+JavaScript,
 Bootstrap
 
 ## Get Started
