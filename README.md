@@ -1,14 +1,22 @@
-# POKEMON REACT APP
+# Pokemon Gallery
 
-This app fetches pokemon data from https://pokeapi.co/ and renders the first 150 Pokemons
-It includes name, number, type and picture. It also filters the displayed pokemon base on the type.
+The app fetches pokemon data from https://pokeapi.co/ and renders the Pokemons details
+It also filters the displayed pokemon base on the type.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 and https://getbootstrap.com/ for the front end.
 
 You can visit the app at https://kizto86.github.io/pokemon_gallery/
 
+## Technologies used
+
+React
+JavaScript
+Bootstrap
+
 ## Get Started
+
+To install the project dependencies from your terminal you can run:
 
 ### `npm install`
 

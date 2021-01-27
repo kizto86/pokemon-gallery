@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="Title">
       <center>
-        <h2>Poke Gallery</h2>
+        <h2>Pokemon Gallery</h2>
       </center>
     </div>
   );

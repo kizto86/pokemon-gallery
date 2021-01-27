@@ -5,8 +5,8 @@ const About = () => {
     <div className="card text-center">
       <div className="card-body">
         <p>
-          Poke gallery is a react application that fetches Pokemon from the poke
-          API
+          Pokemon gallery is a react application that fetches Pokemon from the
+          poke API
         </p>
         <p>It renders the Pokemons and displays their details</p>
         <p>The Pokemons can be filter by multiple types</p>
